@@ -41,7 +41,7 @@ public class AuthServiceImpl implements IAuthService {
         //拿取验证码判断是否正确
         String verifyCode = verifyCodeService.getLoginVerifyCodeByPhone(phone);
         if (!Objects.equals(verifyCode, code)) {
-            throw new CameraException("验证码错误，请重新输入");
+            throw new CameraException("1","验证码错误，请重新输入");
         }
 
         //检查当前手机号是否存在

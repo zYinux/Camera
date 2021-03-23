@@ -19,7 +19,7 @@ public class CameraWebMvcConfigurer implements WebMvcConfigurer {
     public void addInterceptors(InterceptorRegistry registry){
         registry.addInterceptor(new AuthInterceptor())
                 .addPathPatterns("/**")
-                .excludePathPatterns("auth/login")
+                .excludePathPatterns("/auth/login")
                 .excludePathPatterns("/static/**");
     }
 }

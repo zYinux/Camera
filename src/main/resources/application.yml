@@ -8,3 +8,13 @@ mybatis-plus:
       logic-delete-field: logicDeleted
       logic-delete-value: -1
       logic-not-delete-value: 1
+
+app:
+  # Jwt令牌加密的签名值。该值的长度要超过10个字符(过短会报错)。
+  tokenSigningKey: camera-zyinux-WXc7DaZ9
+  # Jwt令牌在Http Header中的键名称。
+  tokenHeaderKey: Authorization
+  # Jwt令牌刷新后在Http Header中的键名称。
+  refreshedTokenHeaderKey: RefreshedToken
+  # Jwt令牌过期时间(毫秒)。
+  expiration: 72000000

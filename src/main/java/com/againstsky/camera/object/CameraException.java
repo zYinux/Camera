@@ -17,6 +17,11 @@ public class CameraException extends RuntimeException {
     public CameraException() {
 
     }
+    public CameraException(String code,String message) {
+        super(message);
+        this.errorCode=code;
+    }
+
 
     public CameraException(String message) {
         super(message);

@@ -14,7 +14,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 @Getter
 @AllArgsConstructor
 public enum ResponseCode {
-    SUCCESS("0");
+    SUCCESS("0","success"),
+    ERROR("999","UNKNOW_ERROR"),
+
+    AUTH_ERROR("403","用户会话已过期或尚未登录，请重新登录！")
+    ;
 
     private String code;
+    private String msg;
 }
