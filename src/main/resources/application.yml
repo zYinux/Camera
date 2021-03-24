@@ -18,3 +18,6 @@ app:
   refreshedTokenHeaderKey: RefreshedToken
   # Jwt令牌过期时间(毫秒)。
   expiration: 72000000
+server:
+  tomcat:
+    uri-encoding: UTF-8

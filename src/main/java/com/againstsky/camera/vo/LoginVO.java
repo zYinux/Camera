@@ -1,5 +1,6 @@
 package com.againstsky.camera.vo;
 
+import com.againstsky.camera.dao.entity.MemberEntity;
 import lombok.Data;
 
 /**
@@ -11,4 +12,8 @@ import lombok.Data;
  */
 @Data
 public class LoginVO {
+
+    String token;
+
+    MemberEntity memberEntity;
 }

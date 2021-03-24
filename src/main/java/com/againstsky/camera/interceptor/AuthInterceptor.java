@@ -5,6 +5,7 @@ import cn.hutool.json.JSONUtil;
 import com.againstsky.camera.config.AppConfig;
 import com.againstsky.camera.core.annotation.NoAuthInterface;
 import com.againstsky.camera.em.ResponseCode;
+import com.againstsky.camera.em.TokenPayload;
 import com.againstsky.camera.object.ResponseResult;
 import com.againstsky.camera.object.TokenData;
 import com.againstsky.camera.util.JwtUtil;
@@ -32,6 +33,8 @@ public class AuthInterceptor implements HandlerInterceptor {
 
     @Autowired
     AppConfig appConfig;
+
+
 
     @Override
     public boolean preHandle(HttpServletRequest request,
@@ -62,8 +65,8 @@ public class AuthInterceptor implements HandlerInterceptor {
         }
 
         //把用户名存入当前请求里面
-        String userId= (String) c.get("userId");
-        TokenData tokenData=new TokenData();
+        String userId = (String) c.get(TokenPayload.USER_ID.name());
+        TokenData tokenData = new TokenData();
         tokenData.setUserId(userId);
         tokenData.setToken(token);
         TokenData.addToRequest(tokenData);

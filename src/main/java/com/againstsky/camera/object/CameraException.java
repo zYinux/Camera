@@ -1,5 +1,6 @@
 package com.againstsky.camera.object;
 
+import com.againstsky.camera.em.ResponseCode;
 import lombok.Data;
 
 /**
@@ -25,5 +26,10 @@ public class CameraException extends RuntimeException {
 
     public CameraException(String message) {
         super(message);
+    }
+
+    public CameraException(ResponseCode code) {
+        super(code.getMsg());
+        this.errorCode = code.getCode();
     }
 }
